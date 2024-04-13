@@ -1,4 +1,6 @@
 {
+  "proxy": "http://localhost:4000", 
+  "_comment": "//for the backend server running at 4000 to connect tro frontend erunnign at port 3000",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,

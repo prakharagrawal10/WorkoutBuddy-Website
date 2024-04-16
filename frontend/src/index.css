@@ -97,3 +97,69 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
+/* styles.css */
+.home1 {
+  text-align: center;
+  padding: 20px;
+}
+
+.intro {
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+.workout {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px auto; /* Center the workout cards horizontally */
+  width: 80%; /* Adjust width as needed */
+  max-width: 400px; /* Set maximum width for better responsiveness */
+}
+
+.workout h3 {
+  margin-top: 0;
+}
+
+
+/* footer.css */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}

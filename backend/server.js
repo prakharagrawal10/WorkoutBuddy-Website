@@ -1,26 +1,30 @@
-const express = require('express')
-const mongoose = require('mongoose')
-require('dotenv').config()
-const app = express()
-const workoutRoutes = require ('./routes/workout')
+const express = require('express');
+const mongoose = require('mongoose');
+require('dotenv').config();
+const app = express();
+const workoutRoutes = require('./routes/workout');
+const userRoutes = require('./routes/user'); // Import user routes
 
-//middleware
-app.use(express.json())
-app.use((req,res,next)=>{
-    console.log(req.path,req.method)
-    next()
-})
+// Middleware
+app.use(express.json());
+app.use((req, res, next) => {
+    console.log(req.path, req.method);
+    next();
+});
 
-app.use(('/api/workout'),workoutRoutes)
+// Routes
+app.use('/api/workout', workoutRoutes);
+app.use('/api/user', userRoutes); // Mount user routes at /api/user
 
-//connect to db
-mongoose.connect(process.env.MONO_URI)
-    .then(()=>{
-        //listen for requests
-        app.listen(process.env.PORT, () =>{
-            console.log('connected to db and Server is running on port 4000')
-        })
-    })  
-    .catch((error)=>{
-        console.log(error)
+// Connect to the database
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        // Start the server after successfully connecting to the database
+        app.listen(process.env.PORT, () => {
+            console.log('Connected to the database and server is running on port 4000');
+        });
     })
+    .catch((error) => {
+        console.log(error);
+    });
+

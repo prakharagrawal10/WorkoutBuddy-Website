@@ -23,25 +23,123 @@ const LoginSignup = () => {
 };
 
 const LoginForm = () => {
-  // Logic for handling login form submission
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        // Clear form fields
+        setEmail("");
+        setPassword("");
+        setError("");
+        // Redirect to dashboard or another page on successful login
+        window.location.href = "/dashboard";
+      } else {
+        const data = await response.json();
+        setError(data.error || "Login failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setError("An error occurred. Please try again later.");
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {/* Login form fields */}
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      {error && <div className="error">{error}</div>}
       <button type="submit">Login</button>
     </form>
   );
 };
 
 const SignupForm = () => {
-  // Logic for handling signup form submission
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      if (response.ok) {
+        // Clear form fields
+        setName("");
+        setEmail("");
+        setPassword("");
+        setError("");
+        // Redirect to dashboard or another page on successful signup
+        window.location.href = "/dashboard";
+      } else {
+        const data = await response.json();
+        setError(data.error || "Signup failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setError("An error occurred. Please try again later.");
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {/* Signup form fields */}
-      <input type="text" placeholder="Full Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
+      <input
+        type="text"
+        placeholder="Full Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      {error && <div className="error">{error}</div>}
       <button type="submit">Sign Up</button>
     </form>
   );

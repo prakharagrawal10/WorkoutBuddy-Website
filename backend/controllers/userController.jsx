@@ -1,6 +1,6 @@
 // userController.js
 
-const User = require('../models/usermodels');
+const User = require('../models/usermodels.jsx');
 const bcrypt = require('bcrypt');
 
 exports.signup = async (req, res) => {

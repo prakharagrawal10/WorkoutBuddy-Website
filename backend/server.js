@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const app = express();
-const workoutRoutes = require('./routes/workout');
-const userRoutes = require('./routes/user'); // Import user routes
+const workoutRoutes = require('./routes/workout.jsx');
+const userRoutes = require('./routes/user.jsx'); // Import user routes
 
 // Middleware
 app.use(express.json());

@@ -7,6 +7,7 @@ import AddWorkout from './pages/AddWorkout'
 import Navbar from './components/Navbar'
 import ContactUs from './pages/ContactUs'
 import Login from './pages/Login'
+import Signup from './pages/Signup'
 import Footer from './components/Footer'
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/workouts" element={<WorkoutList />} />
             <Route path="/add-workout" element={<AddWorkout />} />

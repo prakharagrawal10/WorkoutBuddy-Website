@@ -97,172 +97,34 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
-
-/* styles.css */
-.home1 {
-  text-align: center;
-  padding: 20px;
+input.error {
+  border: 1px solid var(--error);
 }
 
-.intro {
-  margin-bottom: 40px;
-}
-
-.buttons {
+/* navbar */
+nav {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
-
-.btn {
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
+nav a {
+  margin-left: 10px;
+}
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
   cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
+  font-size: 1em;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-}
-
-
-.workout {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px auto; /* Center the workout cards horizontally */
-  width: 80%; /* Adjust width as needed */
-  max-width: 400px; /* Set maximum width for better responsiveness */
-}
-
-.workout h3 {
-  margin-top: 0;
-}
-
-
-/* footer.css */
-footer {
-  background: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  flex-shrink: 0;
-}
-
-
-
-
-footer p {
-  margin: 0;
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-
-/* index.css */
-
-/* Login and Signup Page */
-.login-signup {
+/* auth forms */
+form.signup, form.login {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.login-signup h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.login-signup form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-signup input[type="email"],
-.login-signup input[type="password"],
-.login-signup input[type="text"],
-.login-signup textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.login-signup button[type="submit"] {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-}
-
-.login-signup button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-/* Contact Us Page */
-.contact-us {
-  max-width: 600px;
-  margin: 20px auto; /* Add margin to center the form */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  flex: 1; /* Let the contact form grow to fill the available space */
-}
-
-.contact-us-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensure the container takes up at least the height of the viewport */
-}
-
-.contact-us h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.contact-us form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-us label {
-  margin-bottom: 5px;
-}
-
-.contact-us input[type="text"],
-.contact-us input[type="email"],
-.contact-us textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.contact-us button[type="submit"] {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-}
-
-.contact-us button[type="submit"]:hover {
-  background-color: #0056b3;
+  background: #fff;
+  border-radius: 4px;
 }

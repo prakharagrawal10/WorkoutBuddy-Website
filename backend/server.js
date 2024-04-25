@@ -1,30 +1,33 @@
-const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config();
-const app = express();
-const workoutRoutes = require('./routes/workout.jsx');
-const userRoutes = require('./routes/user.jsx'); // Import user routes
+require('dotenv').config()
 
-// Middleware
-app.use(express.json());
+const express = require('express')
+const mongoose = require('mongoose')
+const workoutRoutes = require('./routes/workouts')
+const userRoutes = require('./routes/user')
+
+// express app
+const app = express()
+
+// middleware
+app.use(express.json())
+
 app.use((req, res, next) => {
-    console.log(req.path, req.method);
-    next();
-});
+  console.log(req.path, req.method)
+  next()
+})
 
-// Routes
-app.use('/api/workout', workoutRoutes);
-app.use('/api/user', userRoutes); // Mount user routes at /api/user
+// routes
+app.use('/api/workouts', workoutRoutes)
+app.use('/api/user', userRoutes)
 
-// Connect to the database
+// connect to db
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        // Start the server after successfully connecting to the database
-        app.listen(process.env.PORT, () => {
-            console.log('Connected to the database and server is running on port 4000');
-        });
+  .then(() => {
+    // listen for requests
+    app.listen(process.env.PORT, () => {
+      console.log('connected to db & listening on port', process.env.PORT)
     })
-    .catch((error) => {
-        console.log(error);
-    });
-
+  })
+  .catch((error) => {
+    console.log(error)
+  })

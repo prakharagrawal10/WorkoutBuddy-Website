@@ -9,6 +9,7 @@ import ContactUs from './pages/ContactUs'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Footer from './components/Footer'
+import About from './pages/about'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/about" element={<About />} />
             <Route path="/workouts" element={<WorkoutList />} />
             <Route path="/add-workout" element={<AddWorkout />} />
           </Routes>

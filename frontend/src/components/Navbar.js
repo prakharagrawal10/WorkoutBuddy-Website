@@ -33,6 +33,11 @@ const Navbar = () => {
         <Link to="/contact">
             <button className="btn">Contact Us</button>
         </Link>
+
+        <Link to="/about">
+            <button className="btn">About Me</button>
+        </Link>
+
       </div>
     </header>
   )

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
+import logo from '../assets/logo.png'; // Adjust the path accordingly
+import './navbar.css';
 
 const Navbar = () => {
   const { logout } = useLogout()
@@ -14,33 +16,29 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <h1>Workout Buddy</h1>
+          <img src={logo} alt="Workout Buddy Logo" />
         </Link>
         <nav>
-          {user && (
-            <div>
-              <span>{user.email}</span>
-              <button onClick={handleClick}>Log out</button>
-            </div>
-          )}
-          {!user && (
-            <div>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
-            </div>
-          )}
+          <div className="nav-links">
+            {user && (
+              <div>
+                <span>{user.email}</span>
+                <button onClick={handleClick}>Log out</button>
+              </div>
+            )}
+            {!user && (
+              <div>
+                <Link to="/login" className="nav-btn">Login</Link>
+                <Link to="/signup" className="nav-btn">Signup</Link>
+              </div>
+            )}
+            <Link to="/contact" className="nav-btn">Contact Us</Link>
+            <Link to="/about" className="nav-btn">About Me</Link>
+          </div>
         </nav>
-        <Link to="/contact">
-            <button className="btn">Contact Us</button>
-        </Link>
-
-        <Link to="/about">
-            <button className="btn">About Me</button>
-        </Link>
-
       </div>
     </header>
   )
 }
 
-export default Navbar
+export default Navbar;
